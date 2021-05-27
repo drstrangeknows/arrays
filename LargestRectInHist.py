@@ -74,7 +74,7 @@ if __name__ == '__main__':
 '''
 
 ############################  My Code  ###################################################################
-# sample comment to commit
+
 def find_area(hist_arr):
 
     maxArea = 0
