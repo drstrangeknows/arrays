@@ -21,6 +21,11 @@ def findWater(height, n):
         if n>0:
             maxLeft = [0]*n
             maxRight = [0]*n
+=======
+def findWater(arr, n):
+    maxLeft = [0]*n
+    maxRight = [0]*n
+>>>>>>> parent of 7a51fac... 1st update to repo with new files
 
             leftMax = maxLeft[0] = height[0]
             rightMax = maxRight[n-1] = height[n-1]
