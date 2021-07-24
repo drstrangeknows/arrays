@@ -16,50 +16,50 @@ boundary from the bar and keep adding to a counter
 
 '''
 
-def findWater(height, n):
-        n=len(height)
-        if n>0:
-            maxLeft = [0]*n
-            maxRight = [0]*n
-=======
-def findWater(arr, n):
+# def findWater(height, n):
+#         n=len(height)
+#         if n>0:
+#             maxLeft = [0]*n
+#             maxRight = [0]*n
+
+def findWater(height):
+    n=len(height)
     maxLeft = [0]*n
     maxRight = [0]*n
->>>>>>> parent of 7a51fac... 1st update to repo with new files
 
-            leftMax = maxLeft[0] = height[0]
-            rightMax = maxRight[n-1] = height[n-1]
-            storedWater = 0
+    leftMax = maxLeft[0] = height[0]
+    rightMax = maxRight[n-1] = height[n-1]
+    storedWater = 0
 
-            for i in range(1, n):
-                if (height[i]>leftMax):
-                    leftMax = height[i]
+    for i in range(1, n):
+        if (height[i]>leftMax):
+            leftMax = height[i]
 
-                maxLeft[i] = leftMax
+        maxLeft[i] = leftMax
 
-            for i in range(n-2, -1, -1):
-                if(height[i]>rightMax):
-                    rightMax = height[i]
+    for i in range(n-2, -1, -1):
+        if(height[i]>rightMax):
+            rightMax = height[i]
 
-                maxRight[i]=rightMax
+        maxRight[i]=rightMax
 
-            for i in range(0, n):
-                if maxLeft[i]<maxRight[i]:
-                    result = maxLeft[i]-height[i]
-                else:
-                    result = maxRight[i]-height[i]
-
-                storedWater += result
-            return storedWater
+    for i in range(0, n):
+        if maxLeft[i]<maxRight[i]:
+            result = maxLeft[i]-height[i]
         else:
-            return 0
+            result = maxRight[i]-height[i]
+
+        storedWater += result
+    return storedWater
+# else:
+#     return 0
 
 def main():
-    arr = [5,3,4,6,3,6]
+    arr = [5,6,3,5,2]
 
     print("Total capacity of Water stored ", findWater(arr))
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
 
 # def findWater(array, n):
